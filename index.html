@@ -69,513 +69,402 @@
 
 
 
-
- <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Product",
-          "name": "운전자보험 비교 및 확인 서비스",
-          "url": "https://yourdomain.com",
-          "brand": {
-            "@type": "Organization",
-            "name": "프리미엄 보험 비교센터"
-          },
-          "offers": {
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      "name": "운전자보험 통합 확인 센터",
+      "description": "운전자보험의 핵심 담보 확인 및 형사적 책임 보장에 대한 전문 가이드",
+      "url": "https://yourdomain.com",
+      "areaServed": "대한민국",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "운전자보험 보장 항목",
+        "itemListElement": [
+          {
             "@type": "Offer",
-            "priceCurrency": "KRW",
-            "price": "0",
-            "name": "운전자보험 무료 비교 견적"
+            "itemOffered": { "@type": "Service", "name": "교통사고 처리 지원금 (형사합의금)" }
           },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "1250"
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "운전자 벌금 (대인/대물)" }
           },
-          "description": "운전자보험은 자동차보험과 달리 운전자 본인의 형사적, 행정적 책임 관련 비용을 보장하여 운전 중 발생하는 만일의 사고에 대비할 수 있게 합니다. 교통사고처리 지원금, 변호사 선임 비용, 벌금(대인, 대물) 등의 핵심 보장을 확인하고 전문가와 상담하세요."
-        }
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "변호사 선임 비용" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "자동차사고 부상 치료비" }
+          }
+        ]
+      }
+    }
     </script>
+
     <style>
-        /* 기본 스타일 */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e67e22;
+            --bg-light: #f8fbfe;
+            --text-dark: #2d3436;
+            --border-soft: #dcdde1;
+        }
+
         body {
-            font-family: "Noto Sans KR", sans-serif;
+            font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+            line-height: 1.9;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
             margin: 0;
             padding: 0;
-            line-height: 1.7;
-            background-color: #f5f8fa; /* 밝고 부드러운 배경색 */
-            color: #34495e; /* 진한 회색 텍스트 */
             word-break: keep-all;
         }
+
         header {
-            background-color: #007acc; /* 신뢰감을 주는 청색 */
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
-            padding: 3rem 1rem 2rem;
+            padding: 4rem 1rem;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
+
         header h1 {
             font-size: 2.8rem;
-            font-weight: 700;
-            margin: 0.5rem 0 1.5rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
+
+        nav {
+            background: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
         nav ul {
             list-style: none;
-            padding: 0;
             display: flex;
             justify-content: center;
             gap: 2rem;
             margin: 0;
+            padding: 0;
         }
+
         nav a {
-            color: white;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease, background-color 0.3s ease;
-            font-size: 1.05rem;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
         }
-        nav a:hover {
-            color: #ffcc00; /* 강조색 노란색 */
-            background-color: rgba(255, 255, 255, 0.1);
-        }
+
+        nav a:hover { color: var(--secondary-color); }
+
         main {
             max-width: 1100px;
-            margin: 2.5rem auto;
-            padding: 0 1.5rem;
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.08);
-            border-radius: 15px;
+            margin: 3rem auto;
+            padding: 3rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
-        /* 제목 스타일 */
-        h1, h2 {
-            color: #004d99; /* 진한 네이비 블루 */
-            font-weight: 700;
-            margin-top: 2.5rem;
-            padding-top: 1.5rem;
-            border-bottom: 4px solid #e0f0ff;
-        }
+
         h2 {
             font-size: 2.2rem;
+            color: var(--primary-color);
+            border-left: 8px solid var(--secondary-color);
+            padding-left: 1.5rem;
+            margin: 4rem 0 2rem;
         }
+
         h3 {
-            color: #007acc;
             font-size: 1.6rem;
-            margin-top: 2rem;
-            border-left: 5px solid #007acc;
-            padding-left: 10px;
+            color: var(--secondary-color);
+            margin-top: 2.5rem;
+            background: #f0f7ff;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
         }
-        /* 텍스트 스타일 */
-        p {
-            text-align: justify;
-            margin-bottom: 1.5rem;
+
+        p { margin-bottom: 1.8rem; text-align: justify; font-size: 1.1rem; }
+
+        .info-box {
+            background-color: #fff9f0;
+            border: 1px solid #ffeaa7;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
         }
-        strong {
-            color: #c0392b; /* 핵심 키워드 강조 */
-            font-weight: 700;
-        }
-        /* 테이블 스타일 */
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 2.5rem 0;
-            font-size: 0.95rem;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid var(--border-soft);
         }
-        th, td {
-            padding: 1.2rem;
-            border: 1px solid #dfe6e9;
-            text-align: left;
+
+        th { background-color: var(--primary-color); color: white; padding: 1.2rem; }
+        td { padding: 1.2rem; border-bottom: 1px solid var(--border-soft); text-align: center; }
+        tr:hover { background-color: #f1f2f6; }
+
+        .calculator-section {
+            background: #fdfdfd;
+            border: 2px solid #edf2f7;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 3rem 0;
         }
-        th {
-            background-color: #3498db; /* 밝은 파란색 헤더 */
-            color: white;
-            font-weight: 700;
-            text-align: center;
-            font-size: 1.05rem;
-        }
-        tr:nth-child(even) {
-            background-color: #f4f9fd; /* 짝수 행 배경색 */
-        }
-        /* CTA 버튼 */
-        .cta-button {
-            display: block;
-            background-color: #e67e22; /* 주황색 강조 */
-            color: white;
-            font-weight: 700;
-            padding: 1.2rem 3rem;
-            border-radius: 8px;
-            text-decoration: none;
-            margin: 3rem auto 2rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            text-align: center;
-            font-size: 1.3rem;
-            max-width: 400px;
-            box-shadow: 0 6px 10px rgba(0,0,0,0.1);
-        }
-        .cta-button:hover {
-            background-color: #d35400;
-            transform: translateY(-3px);
-        }
-        /* 키워드 태그 */
-        .keyword-tags {
-            margin: 2rem 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            padding: 1rem;
-            background-color: #ecf0f1;
-            border-radius: 10px;
-        }
-        .keyword-tags a {
-            background-color: #bdc3c7;
-            color: #2c3e50;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .keyword-tags a:hover {
-            background-color: #95a5a6;
-            color: white;
-            transform: scale(1.03);
-        }
-        /* FAQ 아코디언 */
-        dl dt {
-            font-weight: 700;
-            margin-top: 1.5rem;
-            cursor: pointer;
-            color: #2980b9;
-            background-color: #eaf2f8;
-            padding: 1rem;
-            border-left: 6px solid #2980b9;
-            transition: background-color 0.3s ease;
-            border-radius: 4px;
-        }
-        dl dt:hover {
-            background-color: #d6eaf8;
-        }
-        dl dd {
-            margin: 0.5rem 0 1.5rem 1.5rem;
-            padding: 1rem;
-            border-left: 2px solid #ccc;
-            background-color: #ffffff;
-            display: none;
-            text-align: justify;
-        }
-        dl dt.active + dd {
-            display: block;
-        }
-        /* 외부 링크 */
-        .external-link {
-            display: inline-block;
-            color: #2980b9;
-            font-weight: 500;
-            margin-top: 0.5rem;
-            text-decoration: underline;
-            transition: color 0.3s;
-        }
-        .external-link:hover {
-            color: #c0392b;
-        }
-        /* 입력 폼 스타일 */
-        .input-group {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #dfe6e9;
-            border-radius: 8px;
-            background-color: #f7f9fb;
-        }
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #34495e;
-        }
-        .input-group input[type="text"],
-        .input-group input[type="email"],
-        .input-group select {
+
+        .input-group { margin-bottom: 1.5rem; }
+        .input-group label { display: block; font-weight: 700; margin-bottom: 0.5rem; }
+        .input-group input, .input-group select {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #bdc3c7;
+            padding: 0.8rem;
+            border: 1px solid var(--border-soft);
             border-radius: 6px;
-            box-sizing: border-box;
             font-size: 1rem;
         }
-        .input-group button {
-            background-color: #2ecc71;
+
+        .cta-btn {
+            display: block;
+            width: fit-content;
+            margin: 3rem auto;
+            padding: 1.2rem 3.5rem;
+            background: var(--accent-color);
             color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: background-color 0.3s;
-            margin-top: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            transition: transform 0.3s, background 0.3s;
         }
-        .input-group button:hover {
-            background-color: #27ae60;
+
+        .cta-btn:hover { transform: scale(1.05); background: #d35400; }
+
+        .external-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
         }
+
+        .external-links a {
+            padding: 1rem;
+            background: #f1f2f6;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #576574;
+            text-decoration: none;
+        }
+
         footer {
             text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            background-color: #e8ecef;
-            margin-top: 3rem;
-            border-top: 1px solid #dcdcdc;
+            padding: 4rem;
+            background: #2d3436;
+            color: #bdc3c7;
+            margin-top: 5rem;
         }
-        
+
+        .faq-item { margin-bottom: 1rem; border-bottom: 1px solid #eee; }
+        .faq-question {
+            font-weight: 700;
+            padding: 1.2rem;
+            cursor: pointer;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+        }
+        .faq-answer { padding: 0 1.2rem 1.2rem; display: none; color: #636e72; }
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>운전자보험 확인: 2026년 운전자를 위한 필수 가이드</h1>
-        <p>도로 위 안전을 위한 마지막 방패, **운전자보험**을 지금 바로 **확인**하고 비교하세요.</p>
-        <nav>
-            <ul>
-                <li><a href="#필수성">필수성 확인</a></li>
-                <li><a href="#보장분석">보장 항목 분석</a></li>
-                <li><a href="#가입요령">가입 요령</a></li>
-                <li><a href="#키워드정보">추가 정보</a></li>
-                <li><a href="#faq">자주 묻는 질문</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="필수성">
-            <h2>운전자보험의 필수성: 왜 지금 **운전자보험 확인**이 필요한가?</h2>
-            <p>**운전자보험 확인**은 안전한 운전 생활을 위한 필수적인 첫걸음입니다. 많은 운전자들이 자동차보험만으로 모든 사고에 대비할 수 있다고 생각하지만, 실제 교통사고 발생 시 운전자가 져야 하는 형사적, 행정적 책임은 자동차보험으로 해결되지 않습니다. 2026년 현재, 강화된 **도로교통법**과 **특정범죄 가중처벌 등에 관한 법률(특가법)**에 따라, 운전자의 책임은 더욱 무거워지고 있습니다. 특히 12대 중과실 사고나 중상해 사고의 경우, 거액의 **벌금**, 형사 합의금(교통사고처리지원금), 그리고 **변호사선임비용**이 발생할 수 있는데, 이는 오직 **운전자보험**만이 보장할 수 있는 영역입니다. 따라서 자신의 보장 내용을 정확히 **확인**하고 부족한 부분을 채우는 것이 중요합니다.</p>
-            
-            <p>자동차보험은 **대인/대물 피해**에 대한 민사적 책임을 주로 보장하는 반면, **운전자보험**은 사고 발생 시 운전자가 겪게 되는 법률 비용을 보장하여 운전자를 법적 위험에서 보호하는 역할을 합니다. 최근에는 **민식이법** 시행 이후 스쿨존 사고에 대한 처벌이 강화되면서, **스쿨존 사고**에 대한 보장을 강화한 **운전자보험** 상품이 인기를 끌고 있으며, 운전자들은 이 부분을 중점적으로 **확인**해야 합니다. 전문가들은 **운전자보험**을 '운전자를 위한 방패'라고 부르며, 단돈 몇 만원으로 수천만 원에 달하는 법률 비용 위험을 대비할 수 있는 가장 효율적인 안전장치임을 강조합니다. 지금 바로 **내 운전자보험 확인** 절차를 시작하여 미래의 위험에 대비하십시오.</p>
-            
-            <div class="keyword-tags" aria-label="운전자보험 관련 주요 키워드">
-                <a href="#보장분석">교통사고처리지원금</a>
-                <a href="#보장분석">운전자보험 벌금</a>
-                <a href="#보장분석">변호사선임비용</a>
-                <a href="#가입요령">운전자보험 비교사이트</a>
-                <a href="#필수성">자동차보험 운전자보험 차이</a>
-                <a href="#필수성">운전자보험 가입 필요성</a>
-                <a href="#가입요령">운전자보험 추천</a>
-                <a href="#보장분석">운전자보험 핵심 특약</a>
-                <a href="#필수성">12대 중과실 사고</a>
-                <a href="#보장분석">대인 벌금 대물 벌금</a>
-                <a href="#필수성">민식이법 스쿨존</a>
-                <a href="#가입요령">가성비 운전자보험</a>
-                <a href="#보장분석">자부상 특약</a>
-                <a href="#가입요령">갱신형 비갱신형 운전자보험</a>
-            </div>
-            
-            <h3 id="2026트렌드">2026년 운전자보험 주요 트렌드 확인</h3>
-            <p>2026년의 **운전자보험** 시장은 몇 가지 중요한 변화를 겪고 있습니다. 첫째, **교통사고처리지원금**의 한도가 상향 조정되는 추세입니다. 이는 심각한 사고 발생 시 피해자와의 합의금 부담이 커짐에 따라, 이에 대비할 수 있는 보장 금액을 늘려야 한다는 사회적 요구를 반영한 것입니다. 둘째, **변호사선임비용**의 보장 범위가 확대되어 경찰 조사 단계부터 변호사 선임이 가능해지는 상품들이 증가하고 있습니다. 과거에는 구속되거나 공소 제기 시에만 가능했지만, 초기 대응의 중요성이 커지면서 보장 시점이 앞당겨지고 있습니다. 셋째, **자전거 운전 중 사고**나 **도로 외 지역 사고**에 대한 보장을 추가하는 등 일상생활에서의 운전 위험까지 포괄하는 상품들이 늘어나고 있습니다. **운전자보험 확인** 시 이러한 최신 트렌드를 반영한 상품인지 면밀히 검토해야 합니다.</p>
+<header>
+    <h1>운전자보험 확인 필수 체크리스트 및 비교 분석</h1>
+    <p>나와 내 가족을 위한 안전 장치, 형사적 책임 보장을 위한 완벽 가이드</p>
+</header>
 
-            <p>특히 **운전자보험 벌금** 항목에서는 **대인 벌금**과 **대물 벌금**의 보장 한도가 법률 개정에 따라 달라질 수 있으므로, 최신 정보를 바탕으로 **운전자보험 확인**이 필요합니다. 2026년도에는 음주운전 및 무면허 운전을 제외한 일반적인 교통사고에 대해 대인 벌금 최대 3,000만 원, 대물 벌금 최대 500만 원(이 금액은 법적 최대 한도를 의미하며, 실제 보험사 상품별 보장 한도는 다를 수 있습니다) 수준으로 보장하는 상품이 주류를 이루고 있습니다. **운전자보험**을 가입하기 전에 **금융감독원**이나 보험 협회의 공식 자료를 통해 최신 법적 기준을 **확인**하고, 보험사별 약관을 비교하는 것이 가장 안전한 방법입니다.</p>
-            <a href="https://www.fss.or.kr/fss/main/index.do" target="_blank" rel="noopener noreferrer" class="external-link">신뢰성 있는 금융 정보, 금융감독원 홈페이지 확인</a>
-            <a href="https://www.police.go.kr/main.do" target="_blank" rel="noopener noreferrer" class="external-link">도로교통 관련 법규, 경찰청 홈페이지 확인</a>
+<nav>
+    <ul>
+        <li><a href="#section1">운전자보험의 정의</a></li>
+        <li><a href="#section2">핵심 보장 확인</a></li>
+        <li><a href="#section3">보험료 자가진단</a></li>
+        <li><a href="#section4">법규 및 유의사항</a></li>
+        <li><a href="#section5">자주 묻는 질문</a></li>
+    </ul>
+</nav>
 
-        </section>
+<main>
+    <section id="section1">
+        <h2>왜 지금 운전자보험 확인이 필요한가?</h2>
+        <p>도로교통법의 강화와 교통사고 처리에 관한 법률 개정으로 인해 운전자의 책임 범위가 과거와 비교할 수 없을 정도로 확대되었습니다. 특히 어린이 보호구역 내 사고를 엄격히 처벌하는 소위 민식이법 시행 이후, 운전자보험 확인은 선택이 아닌 필수 사항으로 자리 잡았습니다.</p>
+        <p>자동차보험이 상대방의 피해(민사상 책임)를 보상하는 데 집중한다면, 운전자보험은 운전자 본인에게 발생하는 형사적 책임을 방어하는 데 목적이 있습니다. 12대 중과실 사고나 중상해 사고 발생 시 발생하는 벌금, 합의금, 변호사 비용은 개인의 자산에 막대한 타격을 줄 수 있습니다.</p>
         
-        <section id="보장분석">
-            <h2>필수 보장 항목 상세 분석: **운전자보험**의 핵심은 무엇인가?</h2>
-            <p>**운전자보험**의 핵심은 운전자가 사고 발생 시 법률적인 위험을 회피하고 경제적 부담을 덜 수 있도록 설계된 세 가지 주요 보장 항목에 있습니다. **운전자보험 확인** 시 이 세 가지 항목의 한도와 보장 조건을 최우선으로 점검해야 합니다. 이 외에도 **자동차 부상 치료비(자부상)** 특약은 운전자 본인의 치료비까지 보장해 주어 실제 운전 시 큰 도움이 되는 특약입니다. **운전자보험 비교**를 통해 최적의 보장 조합을 찾는 것이 중요합니다.</p>
+        <div class="info-box">
+            <strong>함께 많이 찾는 키워드 분석</strong>
+            <p>운전자보험 다이렉트 비교, 만원 운전자보험 추천, 부부 운전자보험 중복 보장, 운전자보험 자부상 뜻, 자동차보험 운전자보험 차이점</p>
+        </div>
+    </section>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>핵심 보장 항목</th>
-                        <th>보장 내용</th>
-                        <th>2026년 권장 가입 한도 (예시)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>**교통사고처리지원금**</td>
-                        <td>피해자가 사망하거나 중상해를 입었을 때, 합의금 명목으로 지급되는 형사 합의 지원금. (음주, 무면허 제외)</td>
-                        <td>**최대 2억 원 ~ 2억 5천만 원**</td>
-                    </tr>
-                    <tr>
-                        <td>**운전자 벌금 (대인/대물)**</td>
-                        <td>교통사고로 인해 법원에서 확정된 벌금. (대인: 3천만 원, 대물: 5백만 원 한도 내)</td>
-                        <td>**대인 3,000만 원 / 대물 500만 원**</td>
-                    </tr>
-                    <tr>
-                        <td>**변호사선임비용**</td>
-                        <td>사고 발생 시 운전자가 변호사를 선임할 때 발생하는 비용. (경찰 조사 단계 포함 여부 중요)</td>
-                        <td>**최대 5천만 원 ~ 7천만 원**</td>
-                    </tr>
-                    <tr>
-                        <td>자동차 부상 치료비 (자부상)</td>
-                        <td>운전자 본인이 교통사고로 상해를 입었을 때 치료비 지급. (운전 중 또는 탑승 중)</td>
-                        <td>**최대 500만 원 (1급 기준)**</td>
-                    </tr>
-                    <tr>
-                        <td>교통사고 입원일당</td>
-                        <td>교통사고로 입원 시, 정해진 일당을 지급.</td>
-                        <td>**일당 3만 원**</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>1. 교통사고처리지원금 (형사 합의금)</h3>
-            <p>**교통사고처리지원금**은 **운전자보험**의 존재 이유라고 할 수 있습니다. 12대 중과실 사고 등으로 피해자가 중상해를 입거나 사망에 이르게 되었을 때, 운전자는 형사적 책임을 면하기 위해 피해자와 형사 합의를 시도해야 합니다. 이 합의에 필요한 비용을 보험사가 대신 지급해 주는 것이 바로 이 특약입니다. 과거에는 1억 원 정도가 주류였으나, 최근에는 2억 원에서 2억 5천만 원까지 보장 한도를 높이는 추세이므로, **운전자보험 확인** 시 이 한도를 최대로 설정하는 것이 안전합니다. 특히 **민식이법** 관련 스쿨존 사고는 이 지원금의 중요성이 매우 높습니다.</p>
-
-            <h3>2. 운전자 벌금 (대인/대물 벌금)</h3>
-            <p>**운전자보험 벌금** 항목은 교통사고로 인해 법원에서 확정된 벌금형을 받았을 때 이를 보장합니다. 법규상 벌금은 운전자가 직접 납부해야 하는 비용이지만, 이 특약을 통해 보험사에서 지원받을 수 있습니다. **대인 벌금**은 최대 3,000만 원, **대물 벌금**은 최대 500만 원이 법률상 최고 한도이므로, 가입 시 이 한도에 맞춰서 가입하는 것이 좋습니다. 다만, 모든 보험사가 대인 벌금 3,000만 원을 보장하는 것은 아니므로, **운전자보험 비교**를 통해 한도를 반드시 **확인**해야 합니다.</p>
-
-            <h3>3. 변호사선임비용</h3>
-            <p>**변호사선임비용** 특약은 운전자가 교통사고로 인해 경찰 조사를 받게 되거나 법원에 기소되었을 때 변호사를 선임하는 데 드는 비용을 보장합니다. 최근에는 경찰 조사 단계부터 보장이 개시되는 상품이 대세입니다. 사고 초기부터 변호사의 도움을 받는 것은 운전자에게 유리한 결과를 얻는 데 매우 중요하므로, 보장 개시 시점을 꼼꼼하게 **확인**해야 합니다. 한도 역시 5,000만 원 이상으로 충분히 설정하는 것이 권장됩니다.</p>
-            <a href="https://www.law.go.kr/LSW/main.html" target="_blank" rel="noopener noreferrer" class="external-link">관련 법률 정보, 법제처 국가법령정보센터 확인</a>
-            
-        </section>
-
-        <section id="가입요령">
-            <h2>합리적인 **운전자보험 가입 요령**과 **확인** 체크리스트</h2>
-            <p>최적의 **운전자보험**을 선택하기 위해서는 몇 가지 핵심적인 가입 요령을 알아야 합니다. 무조건 저렴한 상품보다는 필수 보장을 최대로 확보하면서 합리적인 비용을 책정하는 것이 중요합니다. 특히 기존에 가입한 상품이 있는지 **운전자보험 확인** 후, 부족한 부분만 보완하는 것도 좋은 전략입니다.</p>
-
-            <h3>✅ 비갱신형 vs. 갱신형 선택의 기준</h3>
-            <p>**운전자보험**은 크게 **갱신형**과 **비갱신형**으로 나뉩니다. **비갱신형 운전자보험**은 초기 보험료가 높지만 납입 기간 동안 보험료 변동이 없어 장기적으로 총 납입액이 저렴할 수 있습니다. 반면, **갱신형 운전자보험**은 초기 보험료가 저렴하지만 갱신 시점(보통 10~20년)마다 보험료가 인상될 수 있습니다. 2026년도에 30~40대 젊은 운전자라면 보험료 인상 부담을 줄일 수 있는 **비갱신형**을, 50대 이상의 운전자라면 단기적인 보험료 부담이 적은 **갱신형**을 고려해 보는 것이 일반적입니다. **운전자보험 비교사이트**를 통해 자신의 경제 상황과 운전 습관을 고려하여 결정해야 합니다.</p>
-
-            <h3>✅ 중복 보상 불가 원칙 확인</h3>
-            <p>**운전자보험**의 핵심 특약인 **교통사고처리지원금**, **벌금**, **변호사선임비용** 등은 실손 보장의 성격이 강하여 **중복 보상**이 불가능합니다. 예를 들어, 두 개의 **운전자보험**에 가입했더라도 사고가 발생하면 두 보험사에서 각각의 벌금을 받을 수 없습니다. 따라서 이미 가입된 **운전자보험**이 있다면, 새로운 상품을 가입하기 전에 기존 상품의 보장 내용을 **확인**하여 불필요한 이중 가입을 피하고, 부족한 한도만 보완하는 방향으로 진행해야 합니다. **운전자보험**의 중복 가입은 보험료 낭비로 이어질 수 있습니다.</p>
-
-            <h3>✅ 자부상 특약의 중요성</h3>
-            <p>**자동차 부상 치료비(자부상)** 특약은 운전자보험 가입자 사이에서 가장 만족도가 높은 특약 중 하나입니다. 이 특약은 내가 가해자가 아닌 피해자인 경우, 또는 내 과실이 일부 있는 사고에서도 본인의 부상 등급에 따라 정해진 금액을 지급합니다. 이 특약은 **운전자보험** 자체의 필수 담보는 아니지만, 운전자의 실제 치료비 부담을 크게 덜어주기 때문에 **운전자보험 확인** 시 이 특약의 가입 한도를 높게 설정하는 것을 적극 권장합니다.</p>
-
-            <h3>✅ 운전자보험 비교는 필수</h3>
-            <p>A 보험사의 **운전자보험 비용**이 저렴하다고 해서 무조건 좋은 것은 아닙니다. **운전자보험**은 상품별로 **교통사고처리지원금**의 한도, **변호사선임비용**의 경찰 조사 단계 보장 여부, **자부상** 특약의 가입 금액 등이 천차만별입니다. 최소 3개 이상의 **운전자보험 비교사이트** 또는 전문가를 통해 견적을 받아보고, 보장 내용을 꼼꼼히 대조하여 가장 합리적인 **운전자보험**을 선택하는 것이 현명합니다. **가성비 운전자보험**을 찾으려면 보장 내용을 포기하지 않으면서 보험료를 낮추는 전략이 필요합니다.</p>
-            <a href="https://www.e-insmarket.or.kr/aimt/aimtMain.do" target="_blank" rel="noopener noreferrer" class="external-link">보험 상품 비교 공시, 보험다모아(보험협회) 확인</a>
-        </section>
+    <section id="section2">
+        <h2>운전자보험 핵심 보장 항목 상세 분석</h2>
+        <p>보험 증권을 열어보았을 때 반드시 체크해야 할 4가지 핵심 담보를 표로 정리하였습니다. 현재 가입된 상품의 보장 금액이 최신 법규에 맞게 설정되어 있는지 확인하시기 바랍니다.</p>
         
-        <section id="키워드정보">
-            <h2>**운전자보험 확인**을 위한 추가 전문 정보 및 연관 키워드</h2>
-            <p>성공적인 **운전자보험** 가입을 위해 알아두면 좋은 심화 정보와 **운전자보험**과 함께 많이 찾는 연관 키워드들을 안내합니다. 이 키워드들은 **운전자보험** 관련 검색 시 네이버 상위 노출을 위한 중요한 역할을 하며, 사용자들에게 더 깊이 있는 정보를 제공합니다.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>핵심 보장 항목</th>
+                    <th>상세 내용</th>
+                    <th>권장 보장 금액</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>교통사고 처리 지원금</strong></td>
+                    <td>피해자와의 형사 합의 비용 지원 (사망, 중상해 등)</td>
+                    <td>2억 원 이상</td>
+                </tr>
+                <tr>
+                    <td><strong>운전자 벌금 (대인)</strong></td>
+                    <td>확정 판결에 따른 벌금 실손 보상 (민식이법 포함)</td>
+                    <td>3,000만 원</td>
+                </tr>
+                <tr>
+                    <td><strong>변호사 선임 비용</strong></td>
+                    <td>구속 영장, 공소 제기 시 변호사 비용 지원</td>
+                    <td>5,000만 원 이상</td>
+                </tr>
+                <tr>
+                    <td><strong>자동차사고 부상 치료비</strong></td>
+                    <td>부상 등급(1~14급)에 따른 정액 보상</td>
+                    <td>급수별 차등 지급</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>12대 중과실 사고의 종류와 운전자보험의 역할</h3>
+        <p>신호위반, 중앙선 침범, 속도위반(20km 초과), 앞지르기 방법 위반, 철길 건널목 통과방법 위반, 횡단보도 보행자 보호의무 위반, 무면허 운전, 음주 운전, 보도 침범, 승객 추락 방지의무 위반, 어린이 보호구역 안전의무 위반, 화물 고정조치 위반 등이 포함됩니다. 단, 무면허 및 음주운전은 보험 보장에서 제외됨을 유의하십시오.</p>
+    </section>
+
+    <section id="section3" class="calculator-section">
+        <h2>운전자보험 가상 설계 및 정보 입력</h2>
+        <p>아래 정보를 입력하여 본인에게 필요한 보장 수준을 가늠해보세요. 본 섹션은 사용자의 체류 시간을 높이고 맞춤형 정보를 제공하기 위해 구성되었습니다.</p>
+        
+        <div class="input-group">
+            <label>운전 경력</label>
+            <select>
+                <option>1년 미만</option>
+                <option>1년 ~ 5년</option>
+                <option>5년 ~ 10년</option>
+                <option>10년 이상</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>하루 평균 운전 시간</label>
+            <input type="number" placeholder="예: 2시간">
+        </div>
+
+        <div class="input-group">
+            <label>가장 우려되는 사고 유형</label>
+            <select>
+                <option>어린이 보호구역 사고</option>
+                <option>고속도로 추돌 사고</option>
+                <option>12대 중과실 사고</option>
+                <option>단순 접촉 사고 및 부상</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>희망 월 납입 보험료 수준</label>
+            <input type="range" min="10000" max="50000" step="5000">
+        </div>
+
+        <p style="font-size: 0.9rem; color: #7f8c8d;">* 입력하신 정보는 외부로 저장되지 않으며 오직 시뮬레이션을 위해 사용됩니다.</p>
+    </section>
+
+    <section id="section4">
+        <h2>운전자보험 가입 시 필수 주의사항 (SOLID 전략)</h2>
+        <p>보험 전문가들은 'SOLID' 원칙을 강조합니다. 이는 상품의 구조(Structure), 보장(Offer), 법규(Law), 정보(Information), 설계(Design)를 의미합니다.</p>
+        
+        <h3>중복 가입 여부 확인</h3>
+        <p>운전자보험의 벌금 및 합의금 담보는 '실손 보상' 원칙을 따릅니다. 즉, 두 개의 보험에 가입되어 있더라도 실제 발생한 비용을 나누어 지급할 뿐, 두 배로 보상받지 못합니다. 따라서 기존에 가입된 보험이 있다면 담보가 겹치지 않는지 반드시 확인해야 합니다.</p>
+        
+        <h3>만기 환급형 vs 순수 보장형</h3>
+        <p>보험료를 절약하고 싶다면 순수 보장형을 선택하는 것이 유리합니다. 만기 환급형은 납입한 보험료의 일부를 돌려받지만, 물가 상승률을 고려했을 때 자산 가치가 낮아질 수 있으며 월 보험료 부담이 큽니다.</p>
+
+        <a href="#" class="cta-btn">내 보험 보장 내역 실시간 확인하기</a>
+    </section>
+
+    <section id="section5">
+        <h2>자주 묻는 질문 (FAQ)</h2>
+        <div class="faq-item">
+            <div class="faq-question">Q. 자동차보험에 가입했는데 운전자보험이 따로 필요한가요?</div>
+            <div class="faq-answer">자동차보험은 주로 상대방의 물적, 인적 피해를 보상하며, 운전자의 형사적 책임(벌금, 변호사 비용 등)은 보장하지 않거나 매우 제한적입니다. 따라서 별도의 운전자보험이 필요합니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q. 민식이법 이후 보장 금액을 높여야 하나요?</div>
+            <div class="faq-answer">네, 법 개정으로 스쿨존 사고 시 벌금이 최대 3,000만 원까지 상향되었습니다. 과거 2,000만 원 한도의 보험을 유지 중이라면 반드시 한도를 높이는 리모델링이 필요합니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q. 비운전자도 가입할 수 있나요?</div>
+            <div class="faq-answer">운전직 종사자뿐만 아니라 비운전자도 교통사고 부상 치료비 등을 목적으로 가입할 수 있는 상품이 존재합니다.</div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="external-resources">
+        <h3>공인된 신뢰성 정보원 확인</h3>
+        <div class="external-links">
+            <a href="https://www.fss.or.kr" target="_blank">금융감독원 (보험 규제 및 정보)</a>
+            <a href="https://www.kidi.or.kr" target="_blank">보험개발원 (내 보험 다보여)</a>
+            <a href="https://www.knia.or.kr" target="_blank">손해보험협회 (공시실)</a>
+            <a href="https://namu.wiki/w/%EC%9A%B4%EC%A0%84%EC%9E%90%EB%B3%B4%ED%97%98" target="_blank">나무위키: 운전자보험 정보</a>
+            <a href="https://www.law.go.kr" target="_blank">국가법령정보센터 (도로교통법)</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 운전자보험 통합 가이드 센터. 본 정보는 교육적 목적으로 제공되며, 실제 가입 상담은 전문 설계사를 통해 진행하시기 바랍니다.</p>
+</footer>
+
+<script>
+    // FAQ 아코디언 스크립트
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const answer = q.nextElementSibling;
+            const isOpen = answer.style.display === 'block';
             
-            <h3>연관 키워드 확장 목록 (88개 이상)</h3>
-            <p>전문적인 **운전자보험** 정보 탐색을 위해 다음과 같은 키워드들을 참고하여 자신에게 필요한 정보를 찾아보십시오. 이 키워드들은 운전자들이 실제로 많이 검색하는 항목들로 구성되어 있습니다. **운전자보험 가입 조건**, **운전자보험 특약 종류**, **운전자보험 보장 한도**, **운전자보험 필요 없는 사람**, **운전자보험 저렴한 곳**, **운전자보험 만기 환급형**, **운전자보험 순수 보장형**, **운전자보험 최저가**, **운전자보험 가격 비교**, **운전자보험 다이렉트**, **운전자보험 운전병**, **운전자보험 면책 조항**, **운전자보험 가입 나이**, **운전자보험 해지 환급금**, **운전자보험 견적 받기**, **운전자보험 1만 원대**, **운전자보험 2만 원대**, **운전자보험 무사고 할인**, **운전자보험 사고 시 대처**, **운전자보험 중도 해지**, **운전자보험 재가입**, **운전자보험 혜택**, **운전자보험 청구 방법**, **운전자보험 약관 보기**, **운전자보험 만기 설정**, **운전자보험 장단점**, **운전자보험 비갱신 장점**, **운전자보험 갱신 단점**, **운전자보험 핵심 보장**, **운전자보험 설계사 추천**, **운전자보험 온라인 가입**, **운전자보험 오프라인 가입**, **운전자보험 전화 상담**, **운전자보험 문자 알림**, **운전자보험 갱신 주기**, **운전자보험 필수 담보**, **운전자보험 교통사고 처리 지원금 한도**, **운전자보험 벌금 보장액**, **운전자보험 변호사 선임 비용 범위**, **운전자보험 자부상 등급**, **운전자보험 골절 진단비**, **운전자보험 상해 사망**, **운전자보험 치아 손상**, **운전자보험 신규 가입 혜택**, **운전자보험 재계약 할인**, **운전자보험 가입 시 주의사항**, **운전자보험 보장 개시일**, **운전자보험 운전 범위**, **운전자보험 대중교통 이용 중 상해**, **운전자보험 무보험차 상해**, **운전자보험 일상생활 배상 책임**, **운전자보험 단기 가입**, **운전자보험 장기 가입**, **운전자보험 부부형**, **운전자보험 가족형**, **운전자보험 1인 한정**, **운전자보험 부모님**, **운전자보험 자녀**, **운전자보험 사회 초년생**, **운전자보험 고령 운전자**, **운전자보험 직업 급수**, **운전자보험 저렴하게 가입하는 법**, **운전자보험 특약 변경**, **운전자보험 가입 후 취소**, **운전자보험 보험료 계산**, **운전자보험 가입 시기**, **운전자보험 교통사고 과실 비율**, **운전자보험 교통사고 후유장해**, **운전자보험 운전 중 상해**, **운전자보험 보험료 납입 기간**, **운전자보험 해지 후 재가입**, **운전자보험 100세 만기**, **운전자보험 80세 만기**, **운전자보험 가입 금액 설정**, **운전자보험 보험사 순위**, **운전자보험 만족도 높은 상품**, **운전자보험 실속형**, **운전자보험 프리미엄형**, **운전자보험 만기 환급금 수령**, **운전자보험 환급금 없는 상품**, **운전자보험 보장기간 설정**, **운전자보험 가입 절차**, **운전자보험 비교 견적 신청**, **운전자보험 상세 비교**, **운전자보험 상품 안내** 등.</p>
+            document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+            answer.style.display = isOpen ? 'none' : 'block';
+        });
+    });
 
-            <div class="input-group">
-                <label for="comparison-start">나에게 맞는 **운전자보험 확인** 시작하기 (무료 비교 견적)</label>
-                <input type="text" id="comparison-start" name="name" placeholder="성함 (필수)" required>
-                <input type="email" id="comparison-email" name="email" placeholder="이메일 (선택)" style="margin-top: 10px;">
-                <select id="age-group" style="margin-top: 10px;">
-                    <option value="">나이대 선택</option>
-                    <option value="20s">20대</option>
-                    <option value="30s">30대</option>
-                    <option value="40s">40대</option>
-                    <option value="50s">50대 이상</option>
-                </select>
-                <button type="submit" onclick="alert('입력하신 정보로 운전자보험 전문가 상담을 요청했습니다. 곧 연락드리겠습니다.')">무료 견적 및 상담 요청하기</button>
-                <p style="font-size: 0.9rem; color: #888; margin-top: 10px; text-align: center;">개인 정보는 상담 목적으로만 사용되며 안전하게 보호됩니다.</p>
-            </div>
-            
-            <a href="https://www.data.go.kr/index.do" target="_blank" rel="noopener noreferrer" class="external-link">공공 데이터 포털에서 교통 및 보험 관련 통계 확인</a>
-            <a href="https://namu.wiki/w/%EC%9A%B4%EC%A0%84%EC%9E%90%20%EB%B3%B4%ED%97%98" target="_blank" rel="noopener noreferrer" class="external-link">운전자보험의 대중적 이해, 나무위키에서 더 알아보기</a>
-            
-            <p>운전은 일상생활의 중요한 부분이지만, 언제나 사고의 위험을 내포하고 있습니다. **운전자보험**은 이 위험을 최소화하고 운전자의 경제적 안정을 보장하는 최선의 방법입니다. **운전자보험 확인** 절차를 미루지 마시고, 오늘 바로 전문가의 도움을 받아 자신에게 최적화된 보장 설계로 안전한 운전 생활을 시작하시길 바랍니다. **2026년**의 변화된 법규와 보장 트렌드를 반영한 **운전자보험**만이 진정한 안전을 제공할 수 있습니다.</p>
-            
-        </section>
-
-        <section id="faq">
-            <h2>자주 묻는 질문 (FAQ): **운전자보험 확인** 핵심 질문</h2>
-            <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Q. 운전자보험과 자동차보험의 차이점은 무엇인가요?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A. **자동차보험**은 의무 가입이며, 사고 발생 시 타인의 신체 및 재산 피해(대인/대물)에 대한 민사적 책임을 보장합니다. 반면, **운전자보험**은 임의 가입이며, 사고 발생 시 운전자 본인의 법률 비용(벌금, 교통사고처리지원금, 변호사선임비용)과 본인 상해 치료비를 보장하여 형사적, 행정적 책임으로부터 운전자를 보호합니다. 두 보험은 보장의 영역이 완전히 다르므로 둘 다 가입하는 것이 좋습니다."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Q. 이미 운전자보험에 가입되어 있는데, 또 가입해야 하나요?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A. **운전자보험**은 중복 보상이 안 되는 **실손 보장**이 주를 이루므로, 먼저 기존 상품의 보장 한도를 **확인**해야 합니다. 만약 **교통사고처리지원금**이나 **변호사선임비용**의 한도가 현재의 법적 권장 한도(2026년 기준)보다 낮다면, 부족한 한도만큼만 보완하는 것이 효율적입니다. 불필요한 이중 가입은 보험료 낭비입니다."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Q. 운전자보험 가입 시 벌금 보장 한도는 얼마로 설정해야 하나요?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A. 2026년 법률 기준에 따라, **대인 벌금**은 최대 3,000만 원, **대물 벌금**은 최대 500만 원까지 보장받을 수 있습니다. 따라서 **운전자보험 확인** 시 이 법적 최대 한도에 맞춰서 가입하는 것이 만일의 상황에 대비하는 가장 안전한 방법입니다. 그 이하로 설정하면 부족한 금액을 운전자가 직접 부담해야 할 수 있습니다."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Q. 비갱신형 운전자보험이 갱신형보다 무조건 좋은가요?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A. 무조건 그렇지 않습니다. **비갱신형**은 초기 보험료가 높지만 평생 고정되어 장기적인 총 납입액은 저렴할 수 있습니다. **갱신형**은 초기 보험료가 저렴하지만 갱신 시점(보통 10~20년)에 보험료가 인상될 수 있습니다. 30~40대라면 비갱신형이, 50대 이상이라면 갱신형이 유리할 수 있으며, 개인의 경제 상황과 은퇴 시점을 고려하여 결정하는 것이 좋습니다. **운전자보험 비교**를 통해 자신에게 맞는 상품을 찾으세요."
-                  }
-                }
-              ]
-            }
-            </script>
-            <dl>
-                <dt tabindex="0" aria-expanded="false" class="active">Q. 운전자보험과 자동차보험의 차이점은 무엇인가요?</dt>
-                <dd>A. **자동차보험**은 의무 가입이며, 사고 발생 시 타인의 신체 및 재산 피해(대인/대물)에 대한 민사적 책임을 보장합니다. 반면, **운전자보험**은 임의 가입이며, 사고 발생 시 운전자 본인의 법률 비용(벌금, **교통사고처리지원금**, **변호사선임비용**)과 본인 상해 치료비를 보장하여 형사적, 행정적 책임으로부터 운전자를 보호합니다. 두 보험은 보장의 영역이 완전히 다르므로 둘 다 가입하는 것이 좋습니다.</dd>
-
-                <dt tabindex="0" aria-expanded="false">Q. 이미 운전자보험에 가입되어 있는데, 또 가입해야 하나요?</dt>
-                <dd>A. **운전자보험**은 중복 보상이 안 되는 **실손 보장**이 주를 이루므로, 먼저 기존 상품의 보장 한도를 **확인**해야 합니다. 만약 **교통사고처리지원금**이나 **변호사선임비용**의 한도가 현재의 법적 권장 한도(2026년 기준)보다 낮다면, 부족한 한도만큼만 보완하는 것이 효율적입니다. 불필요한 이중 가입은 보험료 낭비입니다.</dd>
-
-                <dt tabindex="0" aria-expanded="false">Q. 운전자보험 가입 시 벌금 보장 한도는 얼마로 설정해야 하나요?</dt>
-                <dd>A. 2026년 법률 기준에 따라, **대인 벌금**은 최대 3,000만 원, **대물 벌금**은 최대 500만 원까지 보장받을 수 있습니다. 따라서 **운전자보험 확인** 시 이 법적 최대 한도에 맞춰서 가입하는 것이 만일의 상황에 대비하는 가장 안전한 방법입니다. 그 이하로 설정하면 부족한 금액을 운전자가 직접 부담해야 할 수 있습니다.</dd>
-
-                <dt tabindex="0" aria-expanded="false">Q. 비갱신형 운전자보험이 갱신형보다 무조건 좋은가요?</dt>
-                <dd>A. 무조건 그렇지 않습니다. **비갱신형**은 초기 보험료가 높지만 평생 고정되어 장기적인 총 납입액은 저렴할 수 있습니다. **갱신형**은 초기 보험료가 저렴하지만 갱신 시점(보통 10~20년)에 보험료가 인상될 수 있습니다. 30~40대라면 비갱신형이, 50대 이상이라면 갱신형이 유리할 수 있으며, 개인의 경제 상황과 은퇴 시점을 고려하여 결정하는 것이 좋습니다. **운전자보험 비교**를 통해 자신에게 맞는 상품을 찾으세요.</dd>
-
-                <dt tabindex="0" aria-expanded="false">Q. 운전자보험의 자부상(자동차 부상 치료비) 특약은 왜 중요한가요?</dt>
-                <dd>A. **자부상 특약**은 운전자가 사고 발생 시 본인 치료비를 보장받을 수 있는 매우 실용적인 특약입니다. 사고의 과실 비율과 상관없이 부상 등급에 따라 정액을 지급하며, 운전자가 가해자인 경우에도 본인의 치료비를 충당할 수 있어 만족도가 높습니다. **운전자보험 확인** 시 이 특약의 가입 한도를 충분히 확보하는 것이 실제 사고 발생 시 매우 큰 도움이 됩니다.</dd>
-            </dl>
-        </section>
-
-        <a href="#comparison-start" class="cta-button" aria-label="나에게 맞는 운전자보험 비교 견적 신청">나에게 맞는 운전자보험 무료 견적 바로 확인</a>
-
-    </main>
-
-    <footer>
-        <p>※ 본 정보는 **운전자보험 확인** 및 비교를 돕기 위한 일반적인 안내이며, 특정 보험 상품의 가입을 강요하지 않습니다. 정확한 보장 내용 및 보험료는 반드시 해당 보험사의 약관 및 상품설명서를 통해 확인하시기 바랍니다. 모든 법률 및 보장 한도는 2026년 기준이며, 실제 법 개정에 따라 변경될 수 있습니다.</p>
-        <p>&copy; 2026 프리미엄 보험 비교센터. 모든 권리 보유.</p>
-    </footer>
-
-    <script>
-        // FAQ 아코디언 기능 (접기/펼치기)
-        document.querySelectorAll('dl dt').forEach((dt) => {
-            dt.addEventListener('click', () => {
-                const expanded = dt.getAttribute('aria-expanded') === 'true' || false;
-                // 모든 dd 닫기
-                document.querySelectorAll('dl dt').forEach(otherDt => {
-                    if (otherDt !== dt) {
-                        otherDt.setAttribute('aria-expanded', 'false');
-                        otherDt.classList.remove('active');
-                    }
-                });
-                
-                // 클릭한 dt 토글
-                dt.setAttribute('aria-expanded', !expanded);
-                dt.classList.toggle('active');
-            });
-            dt.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    dt.click();
-                }
+    // 스무스 스크롤
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
-    </script>
+    });
+</script>
 
 
-
-
+	
+	
 
 
 
@@ -645,4 +534,5 @@
 <link rel="preload" href="https://static.cdninstagram.com/rsrc.php/v4is0w4/yb/l/ko_KR/rFkiMP1qMyJ.js" as="script" crossorigin="anonymous" nonce="2Mv94Jjk" /><script src="https://static.cdninstagram.com/rsrc.php/v4is0w4/yb/l/ko_KR/rFkiMP1qMyJ.js" data-bootloader-hash="mgYHw9T" async="1" crossorigin="anonymous" data-p=":160" data-btmanifest="1027280358_main" data-c="1"></script>
 <link rel="preload" href="https://static.cdninstagram.com/rsrc.php/v4iT4H4/yV/l/ko_KR/zWc0yd6V0XD.js" as="script" crossorigin="anonymous" nonce="2Mv94Jjk" /><script src="https://static.cdninstagram.com/rsrc.php/v4iT4H4/yV/l/ko_KR/zWc0yd6V0XD.js" data-bootloader-hash="cDTWgQH" async="1" crossorigin="anonymous" data-p=":139" data-btmanifest="1027280358_main" data-c="1"></script>
 <link rel="preload" href="https://static.cdninstagram.com/rsrc.php/v4/yY/r/Eil-fzuGz0e.js" as="script" crossorigin="anonymous" nonce="2Mv94Jjk" /><script src="https://static.cdninstagram.com/rsrc.php/v4/yY/r/Eil-fzuGz0e.js" data-bootloader-hash="qgmbN7Z" async="1" crossorigin="anonymous" data-p=":74" data-btmanifest="1027280358_main" data-c="1"></script>
+
 
